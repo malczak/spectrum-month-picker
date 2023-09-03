@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 
 import { useDateSegment } from '@react-aria/datepicker';
 import { classNames } from '@react-spectrum/utils';

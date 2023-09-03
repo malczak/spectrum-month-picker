@@ -1,0 +1,14 @@
+{
+    "singleQuote": true,
+    "tabWidth": 4,
+    "jsxBracketSameLine": true,
+    "arrowParens": "avoid",
+    "overrides": [
+        {
+            "files": "*.json",
+            "options": {
+                "tabWidth": 4
+            }
+        }
+    ]
+}
