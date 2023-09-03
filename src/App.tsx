@@ -7,11 +7,12 @@ import {
   Text,
   View,
 } from "@adobe/react-spectrum";
-import { CalendarDate, DateValue } from "@internationalized/date";
+import { CalendarDate } from "@internationalized/date";
 
 import { customTheme } from "./theme";
 import { MonthPicker } from "./MonthPicker/MonthPicker";
 import React from "react";
+import { About } from "./About";
 
 const minDate = new CalendarDate(2022, 12, 6);
 const maxDate = new CalendarDate(2025, 12, 6);
@@ -51,22 +52,29 @@ function App() {
       height="100%"
     >
       <Flex width="100%" height="100%" direction="column" alignItems="center">
-        <Flex direction="row" gap="size-200">
-          <Flex direction="column" gap="size-100">
-            <h4>Date picker</h4>
-            <DatePickerCmp />
+        <Flex flex={1} direction="column" gap="size-100">
+          <Flex direction="row" gap="size-100">
+            <Flex direction="column" gap="size-100">
+              <h4>Date picker</h4>
+              <DatePickerCmp />
+            </Flex>
+            <Flex direction="column" gap="size-100">
+              <h4>Month picker</h4>
+              <MonthPickerCmp />
+            </Flex>
           </Flex>
-          <Flex direction="column" gap="size-100">
-            <h4>Month picker</h4>
-            <MonthPickerCmp />
-          </Flex>
+          <View paddingTop="size-400">
+            <Flex direction="column" gap="size-100">
+              <Text>
+                Minimum date allowed to select is: {minDate.toString()}
+              </Text>
+              <Text>
+                Maximum date allowed to select is: {maxDate.toString()}
+              </Text>
+            </Flex>
+          </View>
         </Flex>
-        <View paddingTop="size-400">
-          <Flex direction="column" gap="size-100">
-            <Text>Minimum date allowed to select is: {minDate.toString()}</Text>
-            <Text>Maximum date allowed to select is: {maxDate.toString()}</Text>
-          </Flex>
-        </View>
+        <About />
       </Flex>
     </Spectrum>
   );
